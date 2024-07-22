@@ -1,0 +1,22 @@
+<div class="search-box">
+    <form [formGroup]="searchForm">
+        <mat-form-field appearance="outline" class="form-value">
+            <!-- <mat-label>Search</mat-label> -->
+            <input matInput type="text" placeholder="Search" formControlName="searchItem" class="search-input" [(ngModel)]="searchText">
+            <button mat-icon-button (click)="search()" class="search-button">
+                <mat-icon>search</mat-icon>
+            </button>
+            <button mat-icon-button (click)="reset()" class="reset-button">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <!-- <div>
+            <button mat-icon-button (click)="search()">
+                <mat-icon>search</mat-icon>
+            </button>
+            <button mat-icon-button (click)="reset()">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div> -->
+    </form>
+</div>

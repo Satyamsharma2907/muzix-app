@@ -1,0 +1,46 @@
+.image-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+img {
+    border: 2px solid #69f0ae;
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+}
+
+#profile-container {
+    text-align: center;
+    margin-left: 600px;
+}
+
+#profile {
+    border: 2px solid #69f0ae;
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.form-value {
+    width: 460px;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #69f0ae;
+}
+
+button {
+    margin-top: 20px;
+    width: 150px;
+    
+}
+
+.file-input {
+    display: none;
+}

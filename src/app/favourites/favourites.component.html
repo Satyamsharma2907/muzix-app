@@ -1,0 +1,15 @@
+<app-search2 (pro)="datasearch($event)"></app-search2>
+<div *ngIf="showGrid; else noFavs">
+    <h1>Favourite Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let m of movieDetailsList">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', m.id]" src="https://image.tmdb.org/t/p/original/{{m.poster_path}}" alt="">
+            <button mat-mini-fab color="primary" class="delete" (click)="deleteFavourite(m.id)"><mat-icon>delete</mat-icon></button>
+        </mat-card>
+    </div>
+</div>
+<ng-template #noFavs>
+    <div>
+        <h1>No Movies to show...</h1>
+    </div>
+</ng-template>

@@ -1,0 +1,43 @@
+<div class="sticky">
+    <!-- Navbar 1: When user is not logged-in -->
+    <mat-toolbar *ngIf="!userService.loggedIn" color="primary">
+        <button mat-icon-button class="example-icon" routerLink="../home">
+            <mat-icon>movie</mat-icon>
+        </button>
+        <span>Muzix</span>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="primary" class="button" routerLink="/register">Register</button>
+        <button mat-raised-button color="primary" class="button" routerLink="../login">Login</button>
+    </mat-toolbar>
+    
+    <!-- Navbar 2: When user is logged-in -->
+    <mat-toolbar *ngIf="userService.loggedIn" color="primary">
+        <span>Muzix</span>
+        <span class="example-spacer"></span>
+        <div>
+            <button mat-icon-button class="buttons" routerLink="/dashboard">
+                <mat-icon>home</mat-icon>
+            </button>
+            <button mat-icon-button class="buttons" routerLink="/favourites">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button class="buttons" routerLink="/subscription">
+                <mat-icon [style.color]="color">workspace_premium</mat-icon>
+            </button>
+            <button mat-icon-button class="buttons" [matMenuTriggerFor]="menu">
+                <img src="http://localhost:65001/api/authservice/images/{{userService.emailId}}.jpg" alt="" *ngIf = "!img1">
+                <img src="{{imageName1}}" alt="" *ngIf="img1">
+            </button>
+        </div>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/profile">
+                <mat-icon>person</mat-icon>
+                <span>Profile</span>
+            </button>
+            <button mat-menu-item routerLink="/home" (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Log Out</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</div>

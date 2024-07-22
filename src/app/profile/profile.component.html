@@ -1,0 +1,51 @@
+<!-- <app-navbar [imageName1]="imageName1" [color]="color"></app-navbar> -->
+<div class="image-container">
+    <img src="http://localhost:65001/api/authservice/images/{{userService.emailId}}.jpg" alt="" *ngIf = "!img">
+    <img src="{{imageName1}}" alt="" *ngIf="img">
+    <div>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" class="file-input" accept="image/*" (change)="onFileSelected($event)" #fileUpload/>
+            <button mat-icon-button color="accent" id="save" (click)="fileUpload.click()"><mat-icon>add_a_photo</mat-icon></button>
+            <button mat-icon-button color="accent" (click)="deleteImage()"><mat-icon>delete</mat-icon></button>
+        </form>
+    </div>
+</div>
+<div id="profile-container">
+    <div id="profile">
+        <h1>Update Account</h1>
+        <form [formGroup]="profileForm">
+            <div>
+                <mat-form-field appearance="outline"  class="form-value">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" formControlName="name" [class.is-invalid]="name?.invalid && name?.touched">
+                    <mat-error *ngIf="name?.errors?.['required']">Name is Required</mat-error>
+                    <mat-error *ngIf="name?.errors?.['minLength']">Minimum length is 5</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline"  class="form-value">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password" [class.is-invalid]="password?.invalid && password?.touched" [readonly]="true">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline"  class="form-value">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput type="text" formControlName="phoneNo" [class.is-invalid]="phoneNo?.invalid && phoneNo?.touched">
+                    <mat-error *ngIf="phoneNo?.errors?.['required']">Phone Number is Required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline"  class="form-value">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email" [class.is-invalid]="email?.invalid && email?.touched" [readonly]="true">
+                    <mat-error *ngIf="email?.errors?.['required']">Email is Required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button color="accent" id="save" (click)="updateUserDetails()">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+

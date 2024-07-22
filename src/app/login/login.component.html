@@ -1,0 +1,33 @@
+ <!-- <app-navbar></app-navbar> -->
+<mat-grid-list cols="2">
+    <mat-grid-tile>
+        <img src="../../assets/images/home_cinema.svg" alt="">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div id="login">
+            <h1>Sign-in</h1>
+            <form [formGroup]="loginForm">
+                <div>
+                    <mat-form-field appearance="outline" class="form-value">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="text" formControlName="email" [class.is-invalid]="email?.invalid && email?.touched">
+                        <mat-error *ngIf="email?.errors?.['required']">Email is Required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="form-value">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password" [class.is-invalid]="password?.invalid && password?.touched">
+                        <mat-error *ngIf="password?.errors?.['required']">Password is Required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-raised-button id="button" color="accent" (click)="loginCheck()">Login</button>
+                </div>
+                <div>
+                    <button mat-raised-button id="button" color="accent" routerLink="../forgot-password">Forgot Password</button>
+                </div>
+            </form>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>  

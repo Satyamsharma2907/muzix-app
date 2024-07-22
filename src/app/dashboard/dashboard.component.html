@@ -1,0 +1,70 @@
+<!-- <app-navbar [color]="color"></app-navbar> -->
+<app-search></app-search>
+<div>
+    <h1>Trending Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let t of trendingResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', t.id]" src="https://image.tmdb.org/t/p/original/{{t.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>
+<div>
+    <h1>Action Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let a of actionMovieResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', a.id]" src="https://image.tmdb.org/t/p/original/{{a.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>
+<div>
+    <h1>Adventure Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let a of adventureMovieResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', a.id]" src="https://image.tmdb.org/t/p/original/{{a.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>
+<div>
+    <h1>Animation Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let a of animationMovieResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', a.id]" src="https://image.tmdb.org/t/p/original/{{a.poster_path}}" alt="">
+        </mat-card>
+     </div>
+   <!-- [routerLink]="['../movie-details', a.id]" -->
+</div>
+<div>
+    <h1>Comedy Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let c of comedyMovieResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', c.id]" src="https://image.tmdb.org/t/p/original/{{c.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>
+<div>
+    <h1>Documentary Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let d of documentaryMovieResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', d.id]" src="https://image.tmdb.org/t/p/original/{{d.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>
+<div>
+    <h1>Science-fiction Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let s of sciencefictionMovieResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', s.id]" src="https://image.tmdb.org/t/p/original/{{s.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>
+<div>
+    <h1>Thriller Movies</h1>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let t of thrillerMovieResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', t.id]" src="https://image.tmdb.org/t/p/original/{{t.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>
+
+
+

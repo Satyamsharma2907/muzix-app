@@ -1,0 +1,27 @@
+
+<div class="search-box">
+    <form [formGroup]="searchForm">
+        <mat-form-field appearance="outline" class="form-value">
+            <!-- <mat-label>Search</mat-label> -->
+            <input matInput type="text" placeholder="Search" formControlName="searchItem" class="search-input">
+            <button mat-icon-button (click)="search()" class="search-button">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+        <!-- <div>
+            <button mat-icon-button (click)="search()">
+                <mat-icon>search</mat-icon>
+            </button>
+            <button mat-icon-button (click)="reset()">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div> -->
+    </form>
+</div>
+<div>
+    <div class="card-container">
+        <mat-card class="example-card" *ngFor="let s of searchResult">
+            <img mat-card-image class="rowing poster" [routerLink]="['../movie-details', s.id]" src="https://image.tmdb.org/t/p/original/{{s.poster_path}}" alt="">
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+
+.card-container {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    /* flex-wrap: wrap; */
+}
+
+.example-card {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 10px;
+}
+
+.card-image {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.rowing {
+    width: 100%;
+    object-fit: contain;
+    box-sizing: content-box;
+    transition: transform 450ms;
+}
+
+.rowing:hover {
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+h1 {
+    color: #69f0ae;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.poster {
+    width: 200px;
+    height: 300px;
+}

@@ -1,0 +1,35 @@
+.search-box {
+    display: flex;
+    border: 2px solid #69f0ae;
+    border-radius: 5px;
+    width: 500px;
+    height: 80px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form-value {
+    width: 500px;
+
+}
+
+.search-button {
+    margin-right: 10px;
+    height: 50px;
+    color: #69f0ae;
+}
+
+.reset-button
+{
+    margin-right:0px;
+    height: 50px;
+    color: #69f0ae;
+}
+
+.search-input {
+    width: 360px;
+    height: 60px;
+    position:relative;
+    top: -5px;
+}

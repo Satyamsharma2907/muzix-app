@@ -1,0 +1,54 @@
+<!-- <app-navbar [color]="color"></app-navbar> -->
+<mat-grid-list cols="2" rowHeight="2:1" *ngIf="getMovieDetailResult">
+    <mat-grid-tile>
+        <div class="image-container" *ngIf="!trailer">
+            <img id="poster" src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.backdrop_path }}" alt="">
+        </div>
+        <div *ngIf="trailer">
+            <youtube-player [videoId]="getMovieVideoResult"></youtube-player>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="title-container">
+            <div>
+                <h1 id="movie-title">{{ getMovieDetailResult.original_title }}</h1>
+                <button mat-stroked-button><mat-icon id="star">star</mat-icon>{{ getMovieDetailResult.vote_average }}</button>
+                
+                <!-- <h3>{{ getMovieDetailResult.vote_average }}</h3> -->
+            </div>
+            <h3 id="movie-description">{{ getMovieDetailResult.overview }}</h3>
+            <div id="buttons" matTooltip="Please subscribe first" [matTooltipDisabled]="isSubscribed == true">
+                <button mat-raised-button [disabled]="isSubscribed != true" color="accent" class="actions" (click)="addMovie()">Watch Now</button>
+                <button mat-raised-button [disabled]="isSubscribed != true" color="accent" class="actions" (click)="addFavourite()">Add to Favorite</button>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="2" >
+    <mat-grid-tile>
+        <div class="cast-grid">
+            <h1>Cast</h1>
+            <div class="cast-container">
+                <div *ngFor="let c of getMovieCastResult">
+                    <div *ngIf="c.profile_path" class="cast">
+                        <img class="cast-image" src="https://image.tmdb.org/t/p/original/{{ c.profile_path }}" alt="">
+                        <h3 class="cast-name">{{ c.original_name }}</h3>
+                        <h3 class="cast-name">{{ c.character }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="next-container">
+            <div><h1>Watch Next</h1></div>
+            <div class="card-container">
+                <mat-card class="example-card" *ngFor="let r of getRecommendationResult">
+                    <img mat-card-image class="rowing poster" [routerLink]="['/movie-details', r.id]" (click)="updateList(r.id)"  src="https://image.tmdb.org/t/p/original/{{r.poster_path}}" alt="">
+                </mat-card>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<!-- [routerLink]="['/movie-details', r.id]" -->

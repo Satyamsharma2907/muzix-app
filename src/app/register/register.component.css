@@ -1,0 +1,27 @@
+#registration {
+    border: 2px solid #69f0ae;
+    border-radius: 5px;
+    width: 500px;
+    height: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-value {
+    width: 460px;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #69f0ae;
+}
+
+button {
+    margin-top: 20px;
+    width: 150px;
+    
+}
+
+#save {
+    margin-right: 50px;
+}

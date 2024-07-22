@@ -1,0 +1,52 @@
+<!-- <app-navbar [color]="color"></app-navbar> -->
+<div class="subscribe-page">
+  <div id="subscribe-container">
+    <div id="subscription">
+      <h1>Choose Plan</h1>
+      <form [formGroup]="subscriptionForm">
+        <div>
+          <mat-form-field appearance="outline" class="form-value">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="email" [class.is-invalid]="email?.invalid && email?.touched"
+              [readonly]="true">
+          </mat-form-field>
+        </div>
+        <div *ngIf="isSubscribed != true; else yesSubscription">
+          <label id="example-radio-group-label">Pick your subsciption plan</label>
+          <mat-radio-group class="example-radio-group" [(ngModel)]="chosenPlan" formControlName="amount">
+            <div *ngFor="let plan of plans">
+              <mat-card class="plan-card" [style.backgroundColor]="plan.bgColor">
+                <mat-card-header>
+                  <mat-card-title>
+                    <mat-radio-button class="example-radio-button" [value]="plan.value">
+                      ₹ {{ plan.value }}
+                    </mat-radio-button>
+                  </mat-card-title>
+                  <mat-card-subtitle>{{ plan.description }}</mat-card-subtitle>
+                </mat-card-header>
+              </mat-card>
+            </div>
+          </mat-radio-group>
+          <!-- <div>Your chosen subscription plan is: ₹ {{ chosenPlan }}</div> -->
+          <div>
+            <button mat-raised-button color="accent" id="save" (click)="onSubmit()">Pay</button>
+          </div>
+        </div>
+        
+        <ng-template #yesSubscription>
+          <div>
+            <div class="card-container">
+              <mat-card class="example-card" [style.backgroundColor]="userService.chosenPlanColor">
+                <h2 class="card-plan">₹ {{ chosenPlan }}</h2>
+                <h3 class="card-description">{{ chosenPlanDescription }}</h3>
+              </mat-card>
+            </div>
+          </div>
+          <div>
+            <button mat-raised-button color="accent" id="save" (click)="cancelSubscription()">Cancel Subscription</button>
+          </div>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+</div>

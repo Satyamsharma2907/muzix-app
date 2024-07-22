@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.buttons {
+  margin-right: 20px;
+  text-align: center;
+}
+
+.button {
+  margin-right: 20px;
+}
+
+img {
+  border: 2px solid #69f0ae;
+  border-radius: 25px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
